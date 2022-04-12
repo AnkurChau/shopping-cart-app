@@ -46,16 +46,27 @@ class App extends Component {
     window.location.reload();
   };
 
+  handleAddItem=()=>{
+    const counters=this.state.counters.concat({id:this.state.counters.at(this.state.counters.lastIndexOf),value:0});
+    this.setState({counters});
+  }
+
   render() {
     return (
       <div className="main__wrap">
         <main className="container">
-          <div className="card__body">
+          <div className="d-inline-flex flex-column card__body">
             <NavBar
               totalCounters={
                 this.state.counters.filter((c) => c.value > 0).length
               }
             />
+             <button
+              className="btn btn-info m-2"
+              onClick={()=>this.handleAddItem()}
+            >
+              Add item
+            </button>
             <Counters
               counters={this.state.counters}
               onReset={this.handleReset}
