@@ -43,6 +43,7 @@ class App extends Component {
   };
 
   handleRestart = () => {
+    console.log("test");
     window.location.reload();
   };
 

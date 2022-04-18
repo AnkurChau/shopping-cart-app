@@ -20,7 +20,6 @@ class Counters extends Component {
             <button
               className="btn btn-success m-2"
               onClick={onRestart}
-              disabled={counters.length !== 0 ? "disabled" : ""}
             >
               Refresh Counter
             </button>
